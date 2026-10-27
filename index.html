@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ClassIQ | Smart Classroom Allocation</title>
+<style>
+:root{--navy:#14213d;--blue:#3457d5;--sky:#edf2ff;--ink:#20283b;--muted:#778096;--line:#e7eaf1;--bg:#f6f8fc;--green:#18865d;--orange:#b66a11;--red:#c43d4b}
+*{box-sizing:border-box}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--ink)}button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:10px;padding:11px 15px;font-weight:650}.app{display:grid;grid-template-columns:245px 1fr;min-height:100vh}.sidebar{background:var(--navy);color:#fff;padding:25px 17px;display:flex;flex-direction:column;gap:25px}.brand{display:flex;gap:11px;align-items:center;padding:0 8px}.logo{width:39px;height:39px;background:#6f8aff;border-radius:12px;display:grid;place-items:center;font-size:22px}.brand h1{font-size:20px;margin:0}.brand small{color:#aebbd8;font-size:11px;letter-spacing:1.4px}.nav-label{color:#8999ba;font-size:10px;letter-spacing:1.6px;padding:0 12px;margin:8px 0}.nav button{display:flex;width:100%;gap:12px;align-items:center;text-align:left;color:#cbd4e8;background:transparent;margin:4px 0;padding:12px;border-radius:10px;font-weight:500}.nav button.active,.nav button:hover{background:#29395d;color:#fff}.nav .ico{width:21px;text-align:center}.side-bottom{margin-top:auto;border-top:1px solid #33415f;padding:17px 10px;color:#c3cde0;font-size:12px;line-height:1.6}.main{min-width:0}.topbar{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 34px}.crumb{font-size:13px;color:var(--muted)}.topright{display:flex;align-items:center;gap:16px}.avatar{width:36px;height:36px;border-radius:50%;background:#dce5ff;color:#2947b6;display:grid;place-items:center;font-weight:750}.content{max-width:1450px;margin:auto;padding:30px 34px 45px}.welcome{display:flex;justify-content:space-between;gap:20px;align-items:center;margin-bottom:26px}.welcome h2{font-size:27px;margin:0 0 8px;letter-spacing:-.6px}.welcome p{margin:0;color:var(--muted);font-size:14px}.primary{background:var(--blue);color:#fff;box-shadow:0 5px 12px #3457d522}.primary:hover{background:#2648c2}.secondary{background:#fff;border:1px solid var(--line);color:var(--ink)}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin-bottom:23px}.stat,.panel{background:#fff;border:1px solid var(--line);border-radius:15px;box-shadow:0 3px 12px #1c2b4a04}.stat{padding:20px}.stat-top{display:flex;align-items:center;justify-content:space-between;color:var(--muted);font-size:13px}.stat-icon{width:36px;height:36px;display:grid;place-items:center;border-radius:11px;background:var(--sky);font-size:18px}.stat strong{display:block;font-size:29px;margin:13px 0 6px;letter-spacing:-.8px}.stat small{color:var(--muted);font-size:12px}.good{color:var(--green)!important}.dashboard-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(280px,1fr);gap:20px}.panel{padding:22px;margin-bottom:20px;min-width:0}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:19px}.panel h3{font-size:16px;margin:0}.panel-sub{font-size:12px;color:var(--muted);margin-top:5px}.linkbtn{background:transparent;color:var(--blue);padding:6px;font-size:12px}.table-wrap{overflow-x:auto}table{width:100%;border-collapse:collapse;font-size:13px;white-space:nowrap}th{text-align:left;color:var(--muted);font-size:11px;font-weight:650;letter-spacing:.35px;padding:12px 10px;border-bottom:1px solid var(--line)}td{padding:14px 10px;border-bottom:1px solid #f0f2f7}tbody tr:last-child td{border-bottom:0}.pill{display:inline-flex;align-items:center;gap:5px;padding:6px 9px;border-radius:20px;font-size:11px;font-weight:700}.pill.ok{background:#e6f7ef;color:#15784e}.pill.wait{background:#fff3df;color:#9d5a09}.pill.blue{background:#edf1ff;color:#3457d5}.room-id{font-weight:750}.room-name{color:var(--muted);font-size:11px;margin-top:4px}.capacity{display:flex;align-items:center;gap:8px}.bar{width:58px;height:5px;border-radius:9px;background:#e9edf6;overflow:hidden}.bar span{display:block;height:100%;background:#6b82ed;border-radius:9px}.activity{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid #f0f2f7}.activity:last-child{border-bottom:0}.dotbox{width:35px;height:35px;border-radius:10px;display:grid;place-items:center;background:#eef2ff;flex-shrink:0}.activity strong{font-size:12px;display:block;margin:1px 0 5px}.activity small{color:var(--muted);font-size:11px}.util-row{display:flex;justify-content:space-between;font-size:12px;margin:16px 0 8px}.utilbar{height:8px;background:#edf0f6;border-radius:20px;overflow:hidden}.utilbar span{display:block;height:100%;border-radius:20px;background:#536ee5}.utilbar.green span{background:#20a477}.utilbar.orange span{background:#eda343}.page{display:none}.page.active{display:block}.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.toolbar input,.toolbar select,.field input,.field select{border:1px solid #dfe4ee;background:#fff;border-radius:9px;padding:11px 12px;outline:none;color:var(--ink)}.toolbar input:focus,.field input:focus,.field select:focus{border-color:#7890ef;box-shadow:0 0 0 3px #3457d511}.toolbar input{min-width:210px;flex:1}.empty{text-align:center;color:var(--muted);padding:25px}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.field{display:flex;flex-direction:column;gap:7px}.field label{font-size:12px;color:#5d667a;font-weight:650}.field input,.field select{width:100%}.form-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:20px}.notice{background:#edf3ff;border:1px solid #dbe5ff;color:#314b9d;padding:13px 15px;border-radius:10px;font-size:12px;line-height:1.5;margin-bottom:18px}.schedule-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.slot-card{border:1px solid var(--line);border-radius:12px;padding:15px}.slot-card h4{margin:0 0 7px;font-size:13px}.slot-card p{margin:0;color:var(--muted);font-size:12px}.slot-card .slotroom{font-weight:700;color:var(--blue);margin-top:12px}.toast{position:fixed;bottom:25px;right:25px;background:#172542;color:white;padding:13px 18px;border-radius:11px;box-shadow:0 10px 30px #0002;opacity:0;transform:translateY(10px);transition:.25s;pointer-events:none;font-size:13px;z-index:5}.toast.show{opacity:1;transform:translateY(0)}.modal-back{position:fixed;inset:0;background:#111a2d77;display:none;align-items:center;justify-content:center;padding:20px;z-index:4}.modal-back.show{display:flex}.modal{background:#fff;border-radius:17px;padding:25px;width:min(510px,100%);box-shadow:0 25px 70px #0a163544}.modal h3{margin:0 0 8px}.modal p{font-size:13px;color:var(--muted);margin:0 0 20px}.footer{text-align:center;color:#a1a9b9;font-size:11px;padding:15px}
+@media(max-width:1000px){.app{grid-template-columns:76px 1fr}.sidebar{padding:22px 10px}.brand{justify-content:center;padding:0}.brand-copy,.nav-label,.nav-text,.side-bottom{display:none}.nav button{justify-content:center;padding:13px 5px}.dashboard-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}.content{padding:25px 22px}.topbar{padding:0 22px}}
+@media(max-width:600px){.app{grid-template-columns:1fr}.sidebar{padding:10px;flex-direction:row;align-items:center;gap:10px;overflow-x:auto}.brand{display:none}.nav{display:flex;gap:4px}.nav-label{display:none}.nav button{width:auto;margin:0;padding:10px}.nav-text{display:inline;font-size:11px}.nav .ico{display:none}.topbar{height:60px}.content{padding:20px 14px}.welcome{align-items:flex-start;flex-direction:column}.welcome h2{font-size:23px}.stats{gap:10px}.stat{padding:14px}.stat strong{font-size:25px}.stat-top{font-size:11px}.stat-icon{width:30px;height:30px}.panel{padding:15px}.formgrid,.schedule-grid{grid-template-columns:1fr}.topright .crumb{display:none}}
+</style>
+</head>
+<body>
+<div class="app">
+<aside class="sidebar">
+  <div class="brand"><div class="logo">▦</div><div class="brand-copy"><h1>ClassIQ</h1><small>SMART CAMPUS</small></div></div>
+  <nav class="nav">
+    <div class="nav-label">WORKSPACE</div>
+    <button class="active" data-page="dashboard"><span class="ico">◫</span><span class="nav-text">Dashboard</span></button>
+    <button data-page="classrooms"><span class="ico">▤</span><span class="nav-text">Classrooms</span></button>
+    <button data-page="classes"><span class="ico">▦</span><span class="nav-text">Classes</span></button>
+    <button data-page="schedule"><span class="ico">▣</span><span class="nav-text">Timetable</span></button>
+    <div class="nav-label" style="margin-top:23px">SYSTEM</div>
+    <button data-page="allocation"><span class="ico">✧</span><span class="nav-text">Auto Allocation</span></button>
+  </nav>
+  <div class="side-bottom">● System operational<br>ClassIQ Allocation Engine<br><span style="color:#8999ba">Demo mode · Local browser</span></div>
+</aside>
+<main class="main">
+<header class="topbar"><div class="crumb">Campus Management <span style="margin:0 8px;color:#c6ccda">/</span> <strong id="crumbPage" style="color:#273149">Dashboard</strong></div><div class="topright"><span class="crumb">Academic year 2026–27</span><div class="avatar">AD</div></div></header>
+<div class="content">
+<section class="page active" id="page-dashboard">
+  <div class="welcome"><div><h2>Good afternoon, Admin <span style="font-size:23px">✦</span></h2><p>Here’s what’s happening across your campus today.</p></div><button class="primary" onclick="openAllocation()">✧ &nbsp; Generate allocation</button></div>
+  <div class="stats">
+    <div class="stat"><div class="stat-top">Total classrooms <span class="stat-icon">▤</span></div><strong id="statRooms">12</strong><small><span class="good">● Active</span> &nbsp; rooms registered</small></div>
+    <div class="stat"><div class="stat-top">Classes to schedule <span class="stat-icon">▦</span></div><strong id="statClasses">8</strong><small>Across all time slots</small></div>
+    <div class="stat"><div class="stat-top">Allocations made <span class="stat-icon">✧</span></div><strong id="statAllocated">6</strong><small><span class="good">● Live</span> &nbsp; allocation status</small></div>
+    <div class="stat"><div class="stat-top">Room utilization <span class="stat-icon">◴</span></div><strong id="statUtil">68%</strong><small>Average capacity usage</small></div>
+  </div>
+  <div class="dashboard-grid">
+    <div>
+      <div class="panel"><div class="panel-head"><div><h3>Recent allocations</h3><div class="panel-sub">Latest classroom assignments</div></div><button class="linkbtn" onclick="showPage('schedule')">View timetable →</button></div><div class="table-wrap"><table><thead><tr><th>CLASS / COURSE</th><th>STUDENTS</th><th>TIME SLOT</th><th>ROOM</th><th>STATUS</th></tr></thead><tbody id="recentRows"></tbody></table></div></div>
+      <div class="panel"><div class="panel-head"><div><h3>Room utilization</h3><div class="panel-sub">Capacity usage by selected rooms</div></div><button class="linkbtn" onclick="showPage('classrooms')">All rooms →</button></div><div id="utilization"></div></div>
+    </div>
+    <div>
+      <div class="panel"><div class="panel-head"><div><h3>Campus overview</h3><div class="panel-sub">Room availability at a glance</div></div><span class="pill blue">Today</span></div><div style="display:flex;justify-content:space-around;text-align:center;padding:12px 0 18px"><div><div style="font-size:26px;font-weight:750" id="availableCount">8</div><div class="panel-sub">Available</div></div><div style="border-left:1px solid var(--line)"></div><div><div style="font-size:26px;font-weight:750" id="occupiedCount">4</div><div class="panel-sub">In use</div></div><div style="border-left:1px solid var(--line)"></div><div><div style="font-size:26px;font-weight:750" id="conflictCount">0</div><div class="panel-sub">Conflicts</div></div></div><div class="utilbar"><span id="overviewBar" style="width:33%"></span></div><div class="panel-sub" style="margin-top:10px">Rooms currently allocated in the selected demo timetable</div></div>
+      <div class="panel"><div class="panel-head"><div><h3>Activity feed</h3><div class="panel-sub">System updates</div></div><span style="color:#21a578">● Live</span></div><div class="activity"><div class="dotbox">✧</div><div><strong>Allocation engine ready</strong><small>Smart fit algorithm is available</small></div></div><div class="activity"><div class="dotbox">▤</div><div><strong>Room capacity checks enabled</strong><small>Rooms matched by student strength</small></div></div><div class="activity"><div class="dotbox">✓</div><div><strong>Conflict detection active</strong><small>Time-slot overlaps are prevented</small></div></div></div>
+    </div>
+  </div>
+</section>
+<section class="page" id="page-classrooms">
+  <div class="welcome"><div><h2>Classrooms</h2><p>Manage rooms, seating capacity, and availability.</p></div><button class="primary" onclick="openRoomModal()">＋ Add classroom</button></div>
+  <div class="stats"><div class="stat"><div class="stat-top">Registered rooms <span class="stat-icon">▤</span></div><strong id="roomTotal">12</strong><small>Across campus</small></div><div class="stat"><div class="stat-top">Total seats <span class="stat-icon">♙</span></div><strong id="seatTotal">680</strong><small>Combined capacity</small></div><div class="stat"><div class="stat-top">Lecture halls <span class="stat-icon">▦</span></div><strong id="hallTotal">4</strong><small>Large-capacity rooms</small></div><div class="stat"><div class="stat-top">Accessible rooms <span class="stat-icon">♿</span></div><strong id="accessTotal">8</strong><small>Demo inventory</small></div></div>
+  <div class="panel"><div class="panel-head"><div><h3>Room directory</h3><div class="panel-sub">Search and manage campus classrooms</div></div></div><div class="toolbar"><input id="roomSearch" placeholder="Search room number or building…" oninput="renderRooms()"><select id="roomFilter" onchange="renderRooms()"><option value="all">All capacities</option><option value="small">Up to 40 seats</option><option value="medium">41–70 seats</option><option value="large">Over 70 seats</option></select></div><div class="table-wrap"><table><thead><tr><th>ROOM</th><th>BUILDING</th><th>CAPACITY</th><th>FEATURES</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody id="roomRows"></tbody></table></div></div>
+</section>
+<section class="page" id="page-classes">
+  <div class="welcome"><div><h2>Classes & Courses</h2><p>Enter student groups and their preferred teaching time slots.</p></div><button class="primary" onclick="openClassModal()">＋ Add class</button></div>
+  <div class="notice">The allocator prioritizes classes with the highest student count first, then assigns the smallest available room that can fit the group. This reduces wasted seating capacity.</div>
+  <div class="panel"><div class="panel-head"><div><h3>Class register</h3><div class="panel-sub">Classes awaiting or receiving a room</div></div><span class="pill blue" id="classCountPill">8 classes</span></div><div class="table-wrap"><table><thead><tr><th>CLASS / COURSE</th><th>STUDENTS</th><th>TIME SLOT</th><th>ASSIGNED ROOM</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody id="classRows"></tbody></table></div></div>
+</section>
+<section class="page" id="page-schedule">
+  <div class="welcome"><div><h2>Timetable</h2><p>Review classroom assignments by teaching period.</p></div><button class="secondary" onclick="window.print()">⇩ Print timetable</button></div>
+  <div class="panel"><div class="panel-head"><div><h3>Weekly schedule overview</h3><div class="panel-sub">Sample time slots · Monday–Friday</div></div><select id="scheduleSlot" onchange="renderSchedule()" style="border:1px solid var(--line);border-radius:8px;padding:8px"><option value="all">All time slots</option><option value="1">Slot 1 · 9:00 AM</option><option value="2">Slot 2 · 10:00 AM</option><option value="3">Slot 3 · 11:00 AM</option><option value="4">Slot 4 · 12:00 PM</option><option value="5">Slot 5 · 2:00 PM</option><option value="6">Slot 6 · 3:00 PM</option></select></div><div class="schedule-grid" id="scheduleGrid"></div></div>
+  <div class="panel"><div class="panel-head"><div><h3>Allocation details</h3><div class="panel-sub">Full room assignment list</div></div></div><div class="table-wrap"><table><thead><tr><th>CLASS</th><th>STUDENTS</th><th>TIME</th><th>ROOM</th><th>SEATS REMAINING</th></tr></thead><tbody id="scheduleRows"></tbody></table></div></div>
+</section>
+<section class="page" id="page-allocation">
+  <div class="welcome"><div><h2>Auto Allocation Engine</h2><p>Generate a room plan using capacity matching and time-slot conflict checks.</p></div><button class="primary" onclick="runAllocation()">✧ Run allocation</button></div>
+  <div class="notice"><strong>How it works:</strong> This demo uses a rule-based greedy algorithm. It schedules larger classes first, chooses the smallest room with enough seats, and never assigns one room to two classes in the same time slot.</div>
+  <div class="stats"><div class="stat"><div class="stat-top">Classes processed <span class="stat-icon">▦</span></div><strong id="allocProcessed">8</strong><small>Input class list</small></div><div class="stat"><div class="stat-top">Successfully assigned <span class="stat-icon">✓</span></div><strong id="allocSuccess">6</strong><small>Room + time slot matched</small></div><div class="stat"><div class="stat-top">Unassigned <span class="stat-icon">!</span></div><strong id="allocFailed">2</strong><small>Need a larger or free room</small></div><div class="stat"><div class="stat-top">Conflicts found <span class="stat-icon">⌁</span></div><strong id="allocConflicts">0</strong><small>Duplicate room/time prevented</small></div></div>
+  <div class="panel"><div class="panel-head"><div><h3>Allocation results</h3><div class="panel-sub">The latest generated room plan</div></div><span class="pill ok" id="allocStatus">Ready</span></div><div class="table-wrap"><table><thead><tr><th>CLASS / COURSE</th><th>STUDENTS</th><th>TIME SLOT</th><th>ROOM ASSIGNED</th><th>SEATS LEFT</th><th>RESULT</th></tr></thead><tbody id="allocationRows"></tbody></table></div></div>
+</section>
+<div class="footer">ClassIQ · Smart Campus Scheduling · Demo data is stored in this browser session.</div>
+</div>
+</main>
+</div>
+<div class="modal-back" id="modalBack" onclick="if(event.target===this)closeModal()"><div class="modal"><h3 id="modalTitle">Add item</h3><p id="modalDesc">Enter details below.</p><form id="modalForm"><div class="formgrid" id="modalFields"></div><div class="form-actions"><button type="button" class="secondary" onclick="closeModal()">Cancel</button><button class="primary" type="submit">Save details</button></div></form></div></div>
+<div class="toast" id="toast"></div>
+<script>
+const slotNames={1:"9:00 AM",2:"10:00 AM",3:"11:00 AM",4:"12:00 PM",5:"2:00 PM",6:"3:00 PM"};
+let rooms=[
+ {id:101,building:"Block A",capacity:30,features:"Projector",status:"Available"},
+ {id:102,building:"Block A",capacity:60,features:"Projector, AC",status:"Available"},
+ {id:103,building:"Block A",capacity:90,features:"Smart board, AC",status:"Available"},
+ {id:201,building:"Block B",capacity:40,features:"Projector",status:"Available"},
+ {id:202,building:"Block B",capacity:70,features:"Smart board",status:"Available"},
+ {id:203,building:"Block B",capacity:100,features:"Projector, AC",status:"Available"},
+ {id:301,building:"Block C",capacity:35,features:"Projector",status:"Available"},
+ {id:302,building:"Block C",capacity:55,features:"AC",status:"Available"},
+ {id:303,building:"Block C",capacity:80,features:"Smart board, AC",status:"Available"},
+ {id:401,building:"Science Wing",capacity:45,features:"Lab equipment",status:"Available"},
+ {id:402,building:"Science Wing",capacity:65,features:"Lab equipment, AC",status:"Available"},
+ {id:501,building:"Main Hall",capacity:110,features:"Stage, projector",status:"Available"}
+];
+let classes=[
+ {id:1,name:"Computer Science",students:28,slot:1,room:null},
+ {id:2,name:"Applied Mathematics",students:54,slot:1,room:null},
+ {id:3,name:"Physics Lab",students:38,slot:2,room:null},
+ {id:4,name:"Data Structures",students:72,slot:2,room:null},
+ {id:5,name:"Business Studies",students:32,slot:3,room:null},
+ {id:6,name:"Engineering Design",students:88,slot:3,room:null},
+ {id:7,name:"English Communication",students:24,slot:4,room:null},
+ {id:8,name:"Electronics",students:62,slot:4,room:null}
+];
+let allocated=false, nextClassId=9;
+function allocate(){
+ const sorted=[...classes].sort((a,b)=>b.students-a.students);
+ const used=new Set(), result={};
+ for(const c of sorted){
+  let possible=rooms.filter(r=>r.capacity>=c.students&&!used.has(r.id+"-"+c.slot)).sort((a,b)=>a.capacity-b.capacity);
+  if(possible.length){const room=possible[0];result[c.id]=room.id;used.add(room.id+"-"+c.slot)}else result[c.id]=null;
+ }
+ classes.forEach(c=>c.room=result[c.id]);allocated=true;
+}
+function getRoom(id){return rooms.find(r=>r.id===id)}
+function statusPill(c){return c.room?'<span class="pill ok">● Allocated</span>':'<span class="pill wait">Needs room</span>'}
+function renderAll(){renderDashboard();renderRooms();renderClasses();renderSchedule();renderAllocation()}
+function renderDashboard(){
+ document.getElementById("statRooms").textContent=rooms.length;
+ document.getElementById("statClasses").textContent=classes.length;
+ const success=classes.filter(c=>c.room).length;
+ document.getElementById("statAllocated").textContent=success;
+ document.getElementById("statUtil").textContent=(rooms.length?Math.round(classes.reduce((s,c)=>s+(c.room?c.students:0),0)/rooms.reduce((s,r)=>s+r.capacity,0)*100):0)+"%";
+ document.getElementById("availableCount").textContent=Math.max(0,rooms.length-new Set(classes.filter(c=>c.room).map(c=>c.room+"-"+c.slot)).size);
+ document.getElementById("occupiedCount").textContent=new Set(classes.filter(c=>c.room).map(c=>c.room+"-"+c.slot)).size;
+ document.getElementById("conflictCount").textContent=0;
+ document.getElementById("overviewBar").style.width=(classes.filter(c=>c.room).length/Math.max(1,classes.length)*100)+"%";
+ document.getElementById("recentRows").innerHTML=classes.slice(0,5).map(c=>`<tr><td><strong>${esc(c.name)}</strong><div class="room-name">Course #${c.id.toString().padStart(3,"0")}</div></td><td>${c.students}</td><td>${slotNames[c.slot]}</td><td>${c.room?'Room '+c.room:'—'}</td><td>${statusPill(c)}</td></tr>`).join("");
+ const top=rooms.slice(0,5);
+ document.getElementById("utilization").innerHTML=top.map(r=>{let students=classes.filter(c=>c.room===r.id).reduce((s,c)=>s+c.students,0),pct=Math.min(100,Math.round(students/r.capacity*100));return `<div class="util-row"><span>Room ${r.id} <span style="color:#9aa2b2">· ${r.building}</span></span><span>${pct}% <span style="color:#9aa2b2">(${students}/${r.capacity})</span></span></div><div class="utilbar ${pct>80?'orange':pct>0?'green':''}"><span style="width:${pct}%"></span></div>`}).join("");
+ document.getElementById("roomTotal").textContent=rooms.length;
+ document.getElementById("seatTotal").textContent=rooms.reduce((s,r)=>s+r.capacity,0);
+ document.getElementById("hallTotal").textContent=rooms.filter(r=>r.capacity>=80).length;
+ document.getElementById("accessTotal").textContent=rooms.length;
+}
+function renderRooms(){
+ const q=(document.getElementById("roomSearch")?.value||"").toLowerCase(),f=document.getElementById("roomFilter")?.value||"all";
+ let list=rooms.filter(r=>(String(r.id).includes(q)||r.building.toLowerCase().includes(q))&&(f==="all"||(f==="small"&&r.capacity<=40)||(f==="medium"&&r.capacity>40&&r.capacity<=70)||(f==="large"&&r.capacity>70)));
+ document.getElementById("roomRows").innerHTML=list.map(r=>`<tr><td><span class="room-id">Room ${r.id}</span><div class="room-name">Classroom</div></td><td>${esc(r.building)}</td><td><div class="capacity"><strong>${r.capacity}</strong><div class="bar"><span style="width:${Math.min(100,r.capacity/110*100)}%"></span></div></div></td><td>${esc(r.features)}</td><td><span class="pill ok">● ${r.status}</span></td><td><button class="linkbtn" onclick="deleteRoom(${r.id})">Remove</button></td></tr>`).join("")||'<tr><td colspan="6" class="empty">No classrooms match your search.</td></tr>';
+}
+function renderClasses(){
+ document.getElementById("classCountPill").textContent=classes.length+" classes";
+ document.getElementById("classRows").innerHTML=classes.map(c=>`<tr><td><strong>${esc(c.name)}</strong><div class="room-name">Course #${String(c.id).padStart(3,"0")}</div></td><td>${c.students}</td><td>Slot ${c.slot} · ${slotNames[c.slot]}</td><td>${c.room?'Room '+c.room:'—'}</td><td>${statusPill(c)}</td><td><button class="linkbtn" onclick="deleteClass(${c.id})">Remove</button></td></tr>`).join("");
+}
+function renderSchedule(){
+ const slot=document.getElementById("scheduleSlot")?.value||"all";
+ let list=classes.filter(c=>slot==="all"||String(c.slot)===slot).sort((a,b)=>a.slot-b.slot);
+ document.getElementById("scheduleGrid").innerHTML=list.map(c=>`<div class="slot-card"><div style="display:flex;justify-content:space-between;gap:5px"><span class="pill blue">Slot ${c.slot}</span><span style="font-size:11px;color:var(--muted)">${slotNames[c.slot]}</span></div><h4 style="margin-top:13px">${esc(c.name)}</h4><p>${c.students} students</p><div class="slotroom">${c.room?'Room '+c.room:'Not allocated'}</div></div>`).join("")||'<div class="empty">No classes in this time slot.</div>';
+ document.getElementById("scheduleRows").innerHTML=list.map(c=>`<tr><td><strong>${esc(c.name)}</strong></td><td>${c.students}</td><td>${slotNames[c.slot]}</td><td>${c.room?'Room '+c.room:'—'}</td><td>${c.room?getRoom(c.room).capacity-c.students:'—'}</td></tr>`).join("");
+}
+function renderAllocation(){
+ const success=classes.filter(c=>c.room).length;
+ ["allocProcessed"].forEach(id=>document.getElementById(id).textContent=classes.length);
+ document.getElementById("allocSuccess").textContent=success;
+ document.getElementById("allocFailed").textContent=classes.length-success;
+ document.getElementById("allocConflicts").textContent=0;
+ document.getElementById("allocStatus").textContent=allocated?"Generated":"Ready";
+ document.getElementById("allocationRows").innerHTML=classes.map(c=>{const r=getRoom(c.room);return `<tr><td><strong>${esc(c.name)}</strong></td><td>${c.students}</td><td>Slot ${c.slot} · ${slotNames[c.slot]}</td><td>${r?'Room '+r.id:'—'}</td><td>${r?r.capacity-c.students:'—'}</td><td>${c.room?'<span class="pill ok">✓ Success</span>':'<span class="pill wait">Needs room</span>'}</td></tr>`}).join("");
+}
+function showPage(name){
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ document.getElementById("page-"+name).classList.add("active");
+ document.querySelectorAll(".nav button[data-page]").forEach(b=>b.classList.toggle("active",b.dataset.page===name));
+ document.getElementById("crumbPage").textContent={dashboard:"Dashboard",classrooms:"Classrooms",classes:"Classes",schedule:"Timetable",allocation:"Auto Allocation"}[name];
+ if(name==="allocation")renderAllocation();
+}
+document.querySelectorAll(".nav button[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+function openAllocation(){showPage("allocation");runAllocation()}
+function runAllocation(){allocate();renderAll();showPage("allocation");toast("Allocation generated successfully.");}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600)}
+function deleteRoom(id){if(classes.some(c=>c.room===id)){toast("Reallocate classes before removing this room.");return}rooms=rooms.filter(r=>r.id!==id);renderAll();toast("Classroom removed.");}
+function deleteClass(id){classes=classes.filter(c=>c.id!==id);renderAll();toast("Class removed.");}
+function closeModal(){document.getElementById("modalBack").classList.remove("show")}
+function openModal(title,desc,fields,onSave){
+ document.getElementById("modalTitle").textContent=title;document.getElementById("modalDesc").textContent=desc;
+ document.getElementById("modalFields").innerHTML=fields.map(f=>`<div class="field" ${f.full?'style="grid-column:1/-1"':''}><label for="${f.id}">${f.label}</label>${f.options?`<select id="${f.id}" ${f.required?'required':''}>${f.options.map(o=>`<option value="${o.value}">${o.label}</option>`).join("")}</select>`:`<input id="${f.id}" type="${f.type||'text'}" ${f.min!==undefined?`min="${f.min}"`:''} ${f.max!==undefined?`max="${f.max}"`:''} placeholder="${f.placeholder||''}" ${f.required?'required':''}>`}</div>`).join("");
+ document.getElementById("modalBack").classList.add("show");
+ document.getElementById("modalForm").onsubmit=e=>{e.preventDefault();const vals={};fields.forEach(f=>vals[f.id]=document.getElementById(f.id).value);onSave(vals);closeModal();};
+}
+function openRoomModal(){openModal("Add classroom","Add a room to the campus directory.",[
+{id:"roomid",label:"Room number",type:"number",min:1,required:true},{id:"capacity",label:"Seating capacity",type:"number",min:1,max:1000,required:true},{id:"building",label:"Building",required:true,placeholder:"e.g. Block D"},{id:"features",label:"Room features",placeholder:"e.g. Projector, AC"}
+],v=>{let id=+v.roomid;if(rooms.some(r=>r.id===id)){toast("That room number already exists.");return}rooms.push({id,capacity:+v.capacity,building:v.building,features:v.features||"Standard",status:"Available"});renderAll();toast("Classroom added.");});}
+function openClassModal(){openModal("Add class","Register a class and its preferred time slot.",[
+{id:"classname",label:"Class / course name",required:true,full:true,placeholder:"e.g. Database Systems"},{id:"students",label:"Number of students",type:"number",min:1,max:1000,required:true},{id:"slot",label:"Time slot",options:Object.keys(slotNames).map(k=>({value:k,label:"Slot "+k+" · "+slotNames[k]}))}
+],v=>{classes.push({id:nextClassId++,name:v.classname,students:+v.students,slot:+v.slot,room:null});allocated=false;renderAll();toast("Class added. Run allocation to assign a room.");});}
+allocate();renderAll();
+</script>
+</body>
+</html>
